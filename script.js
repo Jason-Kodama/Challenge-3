@@ -25,6 +25,29 @@ function generatePassword() {
     return "Please select an option..."
   }
   // ! not operator  && and operator
+  var validCharactersInventory = []
+
+  if(acceptLowercase){
+    validCharactersInventory += "abcdefghijklmnopqrstuvwxyz" // valiCharactersInventory = validCharactersInvenotry + "abs"
+  }
+  if(acceptUppercase){
+    validCharactersInventory += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  }
+  if(acceptSpecialcharacters){
+    validCharactersInventory += "!@#$%^&*()+_"
+  }
+  if(acceptNumbers){
+    validCharactersInventory += "1234567890"
+  }
+  var password = ""
+
+  var index = Math.floor(Math.random() * validCharactersInventory.length)  // 0 to 1 -- o.5 o.75 .3
+  password += validCharactersInventory[index]
+
+
+
+  return password;
+
 }
 
 
