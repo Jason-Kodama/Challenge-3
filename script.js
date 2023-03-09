@@ -13,14 +13,14 @@ function writePassword() {
 
 function generatePassword() {
   //  var username = prompt("Enter Username")
-  var passwordLength = parseInt(prompt("Enter password length between 8 to 126"))
-  if (passwordLength < 8 || passwordLength > 126 || isNaN(passwordLength)) {
+  var passwordLength = parseInt(prompt("Enter password length between 8 to 128"))
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     return "Invalid Password length entered..." // || or operator
   }
-  var acceptUppercase = confirm("Do you like to have Uppercase alphabets in your password")
-  var acceptLowercase = confirm("Do you like to have Lowercased alpabets in your password")
-  var acceptSpecialcharacters = confirm("Do you like to have Special Characters in your password")
-  var acceptNumbers = confirm("Do you like to have Numbers in your password")
+  var acceptUppercase = confirm("Would you like to have Uppercase alphabets in your password")
+  var acceptLowercase = confirm("Would you like to have Lowercased alpabets in your password")
+  var acceptSpecialcharacters = confirm("Would you like to have Special Characters in your password")
+  var acceptNumbers = confirm("Would you like to have Numbers in your password")
   if (!acceptLowercase && !acceptSpecialcharacters && !acceptNumbers && !acceptUppercase) {
     return "Please select an option..."
   }
@@ -43,7 +43,7 @@ function generatePassword() {
 
   for (let index = 0; index < passwordLength; index++) {
     var i = Math.floor(Math.random() * validCharactersInventory.length)  // 0 to 1 -- o.5 o.75 .3
-    password = validCharactersInventory[i]
+    password += validCharactersInventory[i]
 
   }
   return password;
